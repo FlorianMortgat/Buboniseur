@@ -138,8 +138,8 @@ class Timbre:
         retourne :
             une chaine de caractères correspondant au son wave créé."""
         ret = ""
-        for i in note:
-            ret += self.chaine_son (i[0],i[1]*tempo)
+        for semitone, duration in note:
+            ret += self.chaine_son (semitone, int(duration * tempo))
         return ret
 
     def ecrire_wave (self, adresse="wave0.wav", chaine="", frequence=11025):
